@@ -10,6 +10,7 @@ function newGame() {
   game.currentGame = [];
   game.playerMoves = [];
   game.score = 0;
+
   for (let circle of document.getElementsByClassName("circle")) {
     if (circle.getAttribute("data-listener") !== "true") {
       circle.addEventListener("click", (e) => {
@@ -18,7 +19,7 @@ function newGame() {
         game.playerMoves.push(move);
         playerTurn();
       });
-      circle.setAttribute("data-listemer", "true");
+      circle.setAttribute("data-listener", "true");
     }
   }
   showScore();
